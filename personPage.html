@@ -1,123 +1,223 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="personStyle.css">
-    <script src="https://kit.fontawesome.com/60ab0b254c.js" crossorigin="anonymous"></script>
-    <script defer src="app.js"></script>
-    <title>Personn Name</title>
-</head>
-<body>
-    <header>
-        <div class="leftHeader">
-            <img src="images/peer.png" alt="" class="logo">
-            <div class="searchBox"><input type="text" placeholder="Search to Stalk"><button class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button></div>
-        </div>
-        <div class="rightHeader">
-            <button class="logIn headerBtns">Log In</button>
-            <button class="signUp headerBtns">Sign Up</button>
-        </div>
-    </header>
-    <div class="userInfo">
-        <div class="headerInfo">
-            <h1 class="nameHeader">Ali Vayani </h1>
-            <h2 class="ratingHeader">100% <span class="numReviews">7812 Reviews</span></h2>
-            <h4 class="generalInfoHeader">Keller TX ⋅ 16 ⋅ 5'11"</h4>
-            <h4 class="hoursHeader"><span class="available">Awake </span>7:30 am - 12:00 am</h4>
-        </div>
-        <div class="mainInfo">
-            <div class="realInfo">
-                <button class="infoButtons reviewBtn"><i class="fa-regular fa-star"></i> Write a review</button>
-                <button class="infoButtons photoBtn"><i class="fa-solid fa-camera"></i> Add Photo</button>
-                <button class="infoButtons shareBtn"><i class="fa-solid fa-share"></i> Share </button>
-                <button class="infoButtons saveBtn"><i class="fa-duotone fa-floppy-disk"></i> Save </button>
-                <button class="infoButtons contact"><i class="fa-solid fa-phone"></i> Contact </button>
-                <button class="infoButtons directions"><i class="fa-solid fa-location-dot"></i> Last Seen</button>
-                <hr>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+:root{
+    --white: #f7f7f7;
+    --lightPurple: #AA8FA4;
+    --purple: #823772;
+    --fourPurple: #A84793;
+    --threePurple: #CE57B4;
+    --twoPurple: #F467D5;
+    --onePurple: #FF6BD4;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--white);
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+button:hover{
+    cursor: pointer;
+}
+/* Header */
+header{
+    padding-right: 2rem;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+button{
+    border: none;
+    border-radius: 5px;
+}
+.leftHeader{
+    display: flex;
+    gap: 2rem;
+}
+.logo{
+    width: 130px;
+    height: 52px;
+    pointer-events: none;
+}
+input{
+    height: 32px;
+    width: 20rem;
+    border-radius: 5px;
+    border: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.headerBtns{
+    height: 2rem;
+    width: 4rem;
+    border: none;
+    border-radius: 5px;
+}
+.signUp{
+    background-color: var(--purple);
+    color: var(--white);
+}
+.searchBox{
+    display: flex;
+    align-items: center;
+}
+.searchBtn{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    height: 34px;
+    width: 3em;
+    background-color: var(--purple);
+    color: var(--white);
+}
 
-                <div class="rating">
-                    <h1 class="reviews">Reviews</h1>
-                    <div class="overallRating">
-                        <div class="ratingLeft">
-                            <h2 class="ratingInfo ratingOverall">Overall Rating</h2>
-                            <h3 class="ratingInfo ratingsScore">100%</h2>
-                            <h5 class="ratingInfo ratingNum">7812 Reviews</h2>
-                        </div>
+/*Header Info*/
+.userInfo{
+    height: 70%;
+    background-image: url('images/aliImage.jpeg');
+    background-position: 25% 65%;
+    background-size: 2000px;
+}
+.nameHeader, .ratingHeader, .generalInfoHeader, .hoursHeader{
+    margin: 0;
+    margin-left: 100px;
+    color: var(--white);
+}
+.headerInfo{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.numReviews{
+    font-size: 13px;
+}
+.hoursHeader{
+    margin-bottom: 50px;
+}
+.available{
+    color: rgba(4,197,133,1);
+}
+/* Main Info */
+.mainInfo{
+    display: flex;
+    height: 100%;
+}
+.realInfo{
+    margin-top: 2rem;
+    margin-left: 10rem;
+    margin-right: 3rem;
+    height: 100%;
+    width: 60%;
+}
+/* Main Info Buttons */
+.infoButtons{
+    width: 6rem;
+    height: 3rem;
+}
+.reviewBtn, .photoBtn{
+    width: 9rem;
+}
+.reviewBtn{
+    background-color: var(--purple);
+    color: var(--white);
+    font-weight: 700;
+}
+hr{
+    margin: 16px auto;
+    color: var(--lightPurple);
+    opacity: 20%;
+}
+/* Friends */
+.friendInfo{
+    margin-top: 2rem;
+}
+.friends{
+    color: black;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.friendImg{
+    width: 75px;
+    height: 75px;
+}
+.friendAbout{
+    color: black;
+}
+.friendName{
+    font-weight: 1000;
+}
+/* Review Graph */
+.ratingGraph{
+    margin-top: 4rem;
+}
+.overallRating{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.ratingInfo, .ratingLevel{
+    font-weight: 400;
+    margin: 0;
+}
+.ratingOverall{
+    font-weight: 600;
+}
+.meter{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .75rem;
+    text-align: center;
+}
+.ratingLevel{
+    width: 3rem;
+}
+.fiveMeter, .fourMeter, .threeMeter, .twoMeter, .oneMeter{
+    height: .5rem;
+    border-radius: 10px;
+}
+.fiveMeter{
+    width: 450px;
+    background-color: var(--purple);
+}
+.fourMeter{
+    width: 350px;
+    background-color: var(--fourPurple);
+}
+.threeMeter{
+    width: 250px;
+    background-color: var(--threePurple);
+}
+.twoMeter{
+    width: 150px;
+    background-color: var(--twoPurple);
+}
+.oneMeter{
+    width: 50px;
+    background-color: var(--onePurple);
+}
 
-                        <div class="ratingGraph">
-                            <div class="meter">
-                                <h5 class="ratingLevel">5 Star</h5>
-                                <div class="fiveMeter"></div>
-                            </div>
-                            <div class="meter">
-                                <h5 class="ratingLevel">4 Star</h5>
-                                <div class="fourMeter"></div>
-                            </div>
-                            <div class="meter">
-                                <h5 class="ratingLevel">3 Star</h5>
-                                <div class="threeMeter"></div>
-                            </div>
-                            <div class="meter">
-                                <h5 class="ratingLevel">2 Star</h5>
-                                <div class="twoMeter"></div>
-                            </div>
-                            <div class="meter">
-                                <h5 class="ratingLevel">1 Star</h5>
-                                <div class="oneMeter"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
+/* User Reviews */
+.userPfp{
+    width: 75px;
+    height: 75px;
+}
+.commenterInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-                <div class="userReviews">
-                    <div class="commenterInfo">
-                        <img src="images/dummyPhoto.jpeg" alt="" class="userPfp">
-                        <div class="commenterIRanOutOfNamesForClasses">
-                            <h5 class="userName">Zach Hickman</h5>
-                            <h5 class="userLocation">Fort Worth, TX</h5>
-                            <h5 class="userRating">78%</h5>
-                        </div>
-                    </div>
-                    <h4 class="commenterRating">100% ⋅ 1/29/2023</h4>
-                    <div class="commenterReview">I swear that I, Zach Hickman, am writing this review and that it is not in fact Ali Vayani writing a review for myself in his place. </div>
-                </div>
-                <div class="userReviews">
-                    <div class="commenterInfo">
-                        <img src="images/dummyPhoto.jpeg" alt="" class="userPfp">
-                        <div class="commenterIRanOutOfNamesForClasses">
-                            <h5 class="userName">Hunter Hoinkes</h5>
-                            <h5 class="userLocation">Fort Worth, TX</h5>
-                            <h5 class="userRating">63%</h5>
-                        </div>
-                    </div>
-                    <h4 class="commenterRating">100% ⋅ 1/29/2023</h4>
-                    <div class="commenterReview">I swear that I, Hunter Hoinkes, am writing this review and that it is not in fact Ali Vayani writing a review for myself in his place. </div>
-                </div>
-            </div>
-
-            <div class="sideInfo">
-                <div class="friendInfo">
-                    <h1 class="friends">Friends</h1>
-                    <img src="images/dummyPhoto.jpeg" alt="" class="friendImg">
-                    <div class="friendAbout">
-                        <div class="friendName">Zach Hickman</div>
-                        <div class="friendRating">78% ⋅ 16 ⋅ 6'2"</div>
-                    </div>
-                    <img src="images/dummyPhoto.jpeg" alt="" class="friendImg">
-                    <div class="friendAbout">
-                        <div class="friendName">Hunter Hoinkes</div>
-                        <div class="friendRating">63% ⋅ 15 ⋅ 5'10"</div>
-                    </div>
-                </div>
-                
-            </div>
-
-        </div>
-        
-        
-    </div>
-</body>
-</html>
+}
+.userName, .userLocation, .userRating{
+    margin: 0;
+}
+.commenterRating{
+    margin: 6px;
+}
+.commenterReview{
+    margin-bottom: 4rem;
+}
