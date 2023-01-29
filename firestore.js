@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
-import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, addDoc, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -27,27 +27,47 @@ const userList = document.querySelector('#user-list');
 const from = document.querySelector('#add-user-form');
 
 //make element and render user
-function renderUser(doc)
+async function renderUser(doc)
 {
-    let li = document.createElement('li');
-    let name = document.createElement('span');
-    let score = document.createElement('span');
+  let li = document.createElement('li');
+  let name = document.createElement('span');
+  let score = document.createElement('span');
+  let cross = document.createElement('button');
 
-    li.setAttribute('data-id', doc.id);
+  li.setAttribute('data-id', doc.id);
 
-    name.textContent = doc.data().name;
-    score.textContent = doc.data().score;
+  name.textContent = doc.data().name;
+  score.textContent = doc.data().score;
+  cross.textContent = 'x';
 
-    li.appendChild(name);
-    li.appendChild(score);
+  li.appendChild(name);
+  li.appendChild(score);
+  li.appendChild(cross);
+  
+  userList.appendChild(li);
+
+  //deleting data
+  cross.addEventListener('click', (e) => {
+    e.stopPropagation();
+    let id = e.target.parentElement.getAttribute('data-id');
+
+    doCrap.docs.then(forEach(doc => {
+      if(doc.id == id)
+      {
+        deleteDoc(doc);
+      }
+    }))
     
-    userList.appendChild(li);
+  })
+}
+
+async function doCrap()
+{
+  const querySnapshot = await getDocs(collection(db, 'users'));
+  return Promise.resolve(querySnapshot);
 }
 
 // getting data
-
-
-
 const querySnapshot = await getDocs(collection(db, 'users'));
 querySnapshot.docs.forEach(doc => {
   renderUser(doc);
@@ -58,7 +78,8 @@ from.addEventListener('submit', (e) => {
   e.preventDefault();
   const data = {
     name: from.name.value,
-    score: from.score.value
+    score: from.score.value,
+    reviewsOnUser: from.review.value
   };
   const dbRef = collection(db, 'users');
   addDoc(dbRef, data)
@@ -69,3 +90,5 @@ from.addEventListener('submit', (e) => {
     console.log(error);
   })
 })
+
+
