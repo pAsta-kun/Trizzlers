@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+:root{
+    --white: #f7f7f7;
+    --lightPurple: #AA8FA4;
+    --purple: #823772;
+    --fourPurple: #A84793;
+    --threePurple: #CE57B4;
+    --twoPurple: #F467D5;
+    --onePurple: #FF6BD4;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--white);
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+button:hover{
+    cursor: pointer;
+}
+/* Header */
+header{
+    padding-right: 2rem;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+button{
+    border: none;
+    border-radius: 5px;
+}
+.leftHeader{
+    display: flex;
+    gap: 2rem;
+}
+.logo{
+    width: 130px;
+    height: 52px;
+    pointer-events: none;
+}
+input{
+    height: 32px;
+    width: 20rem;
+    border-radius: 5px;
+    border: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.headerBtns{
+    height: 2rem;
+    width: 4rem;
+    border: none;
+    border-radius: 5px;
+}
+.signUp{
+    background-color: var(--purple);
+    color: var(--white);
+}
+.searchBox{
+    display: flex;
+    align-items: center;
+}
+.searchBtn{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    height: 34px;
+    width: 3em;
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+/* Review Box */
+.review{
+    height: 100%;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+.reviewArea{
+    display: flex;
+    flex-direction: column;
+    width: 50rem;
+    height: 30rem;
+    background-color: var(--white);
+}
+.writeReview{
+    height: 100%;
+}
+
+.post{
+    margin-top: 2rem;
+    width: 10rem;
+    height: 3rem;
+    background-color: var(--purple);
+    color: var(--white);
+    font-weight: 600;
+}
+.wordReview, .numRating{
+    border: none;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    border-radius: 10px;
+    resize: none;
+}
+.numRating{
+    width: 100%;
+    height: 10%;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.wordReview{
+    height: 90%;
+    width: 100%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
