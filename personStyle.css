@@ -79,11 +79,11 @@ input{
     background-image: url('images/aliImage.jpeg');
     background-position: 25% 65%;
     background-size: 2000px;
-    color: var(--white);
 }
 .nameHeader, .ratingHeader, .generalInfoHeader, .hoursHeader{
     margin: 0;
     margin-left: 100px;
+    color: var(--white);
 }
 .headerInfo{
     height: 100%;
@@ -129,6 +129,7 @@ input{
 hr{
     margin: 16px auto;
     color: var(--lightPurple);
+    opacity: 20%;
 }
 /* Friends */
 .friendInfo{
@@ -149,22 +150,18 @@ hr{
 .friendName{
     font-weight: 1000;
 }
-/* Reviews */
+/* Review Graph */
 .ratingGraph{
     margin-top: 4rem;
 }
 .overallRating{
     display: flex;
     align-items: center;
-}
-.reviews{
-    color: black;
-    font-weight: 1000;
+    gap: 2rem;
 }
 .ratingInfo, .ratingLevel{
     font-weight: 400;
     margin: 0;
-    color: black;
 }
 .ratingOverall{
     font-weight: 600;
@@ -202,4 +199,25 @@ hr{
 .oneMeter{
     width: 50px;
     background-color: var(--onePurple);
+}
+
+/* User Reviews */
+.userPfp{
+    width: 75px;
+    height: 75px;
+}
+.commenterInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+.userName, .userLocation, .userRating{
+    margin: 0;
+}
+.commenterRating{
+    margin: 6px;
+}
+.commenterReview{
+    margin-bottom: 4rem;
 }
