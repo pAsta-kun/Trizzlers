@@ -3,6 +3,10 @@
     --white: #f7f7f7;
     --lightPurple: #AA8FA4;
     --purple: #823772;
+    --fourPurple: #A84793;
+    --threePurple: #CE57B4;
+    --twoPurple: #F467D5;
+    --onePurple: #FF6BD4;
 }
 body{
     height: 100vh;
@@ -146,6 +150,56 @@ hr{
     font-weight: 1000;
 }
 /* Reviews */
+.ratingGraph{
+    margin-top: 4rem;
+}
+.overallRating{
+    display: flex;
+    align-items: center;
+}
 .reviews{
     color: black;
+    font-weight: 1000;
+}
+.ratingInfo, .ratingLevel{
+    font-weight: 400;
+    margin: 0;
+    color: black;
+}
+.ratingOverall{
+    font-weight: 600;
+}
+.meter{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .75rem;
+    text-align: center;
+}
+.ratingLevel{
+    width: 3rem;
+}
+.fiveMeter, .fourMeter, .threeMeter, .twoMeter, .oneMeter{
+    height: .5rem;
+    border-radius: 10px;
+}
+.fiveMeter{
+    width: 450px;
+    background-color: var(--purple);
+}
+.fourMeter{
+    width: 350px;
+    background-color: var(--fourPurple);
+}
+.threeMeter{
+    width: 250px;
+    background-color: var(--threePurple);
+}
+.twoMeter{
+    width: 150px;
+    background-color: var(--twoPurple);
+}
+.oneMeter{
+    width: 50px;
+    background-color: var(--onePurple);
 }
