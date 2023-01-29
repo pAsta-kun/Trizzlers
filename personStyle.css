@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+:root{
+    --white: #f7f7f7;
+    --lightPurple: #AA8FA4;
+    --purple: #5C2751;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--white);
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+/* Header */
+header{
+    padding-right: 2rem;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+button{
+    border: none;
+    border-radius: 5px;
+}
+.leftHeader{
+    display: flex;
+    gap: 2rem;
+}
+input{
+    height: 32px;
+    width: 20rem;
+    border-radius: 5px;
+    border: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.headerBtns{
+    height: 2rem;
+    width: 4rem;
+    border: none;
+    border-radius: 5px;
+}
+.signUp{
+    background-color: var(--purple);
+    color: var(--white);
+}
+.searchBox{
+    display: flex;
+    align-items: center;
+}
+.searchBtn{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    height: 34px;
+    width: 3em;
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+/*Info Column*/
+.userInfo{
+    height: 70%;
+    background-image: url('images/aliImage.jpeg');
+    background-position: 25% 65%;
+    background-size: 1450px;
+    color: var(--white);
+}
+h1, h2, h3, h4{
+    margin: 0;
+    margin-left: 100px;
+}
+.mainInfo{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.numReviews{
+    font-size: 13px;
+}
+.hours{
+    margin-bottom: 50px;
+}
+.available{
+    color: rgba(4,197,133,1);
+}
