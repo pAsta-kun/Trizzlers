@@ -83,6 +83,9 @@ input{
 .zach{
     background-position: 25% 40%;
 }
+.zach{
+    background-position: 25% 20%;
+}
 .nameHeader, .ratingHeader, .generalInfoHeader, .hoursHeader{
     margin: 0;
     margin-left: 100px;
