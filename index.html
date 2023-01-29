@@ -14,14 +14,24 @@
     <div id="headerBackground">
         <header>
             <div class="leftHeader">
-                <img src="images/peer.png" alt="" class="logo">
-                <div class="searchBox"><input type="text" placeholder="Search to Stalk"><button class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button></div>
+                <a href="index.html"><img src="images/peer.png" alt="" class="logo" ></a>
+                <div class="searchBox" id="searchBox"onClick="dropDown()">
+                    <input type="text" placeholder="Search to Stalk">
+                    <button class="searchBtn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
             </div>
             <div class="rightHeader">
                 <button class="logIn headerBtns">Log In</button>
                 <button class="signUp headerBtns">Sign Up</button>
             </div>
-            <div class = "content">
+            <!--<div class = "content">
                 <form id = "add-user-form">
                     <input type="text" name="name" placeholder="User name">
                     <input type="text" name="score" placeholder="?/100">
@@ -29,9 +39,36 @@
                     <button>Add User</button>
                 </form>
                 <ul id = "user-list"></ul>
-            </div>
+            </div>-->
         </header>
+        <div class="featured">
+            <h1 class="title">Featured</h1>
+            <div class="box">
+                <a href="alisPage.html">
+                    <span class="name">Ali Vayani ⋅</span>
+                    <span class="rating">100% ⋅ </span>
+                    <span class="idek">Keller TX ⋅ 16 ⋅ 5'11"</span>
+                </a>
+            </div>
+            <div class="box">
+                <a href="hunterPage.html">
+                    <span class="name">Hunter Hoinkes ⋅</span>
+                    <span class="rating">63% ⋅ </span>
+                    <span class="idek">Fort Worth TX ⋅ 15 ⋅ 5'10"</span>
+                </a>
+            </div>
+            <div class="box">
+                <a href="zachPage.html">
+                    <span class="name">Zach Hickman ⋅</span>
+                    <span class="rating">78% ⋅ </span>
+                    <span class="idek">Fort Worth TX ⋅ 16 ⋅ 6'2"</span>
+                </a>
+            </div>
+
+            
+
+            
+        </div>
     </div>
-    
 </body>
 </html>

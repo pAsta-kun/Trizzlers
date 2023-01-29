@@ -77,8 +77,11 @@ input{
 .userInfo{
     height: 70%;
     background-image: url('images/aliImage.jpeg');
-    background-position: 25% 65%;
+    background-position: 25% 75%;
     background-size: 2000px;
+}
+.zach{
+    background-position: 25% 40%;
 }
 .nameHeader, .ratingHeader, .generalInfoHeader, .hoursHeader{
     margin: 0;
