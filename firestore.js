@@ -23,7 +23,27 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+const userList = document.querySelector('#user-list');
+
+//make element and render user
+function renderUser(doc)
+{
+    let li = document.createElement('li');
+    let name = document.createElement('span');
+    let score = document.createElement('span');
+
+    li.setAttribute('data-id', doc.id);
+
+    name.textContent = doc.data().name;
+    score.textContent = doc.data().score;
+
+    li.appendChild(name);
+    li.appendChild(score);
+    
+    userList.appendChild(li);
+}
+
 const querySnapshot = await getDocs(collection(db, 'users'));
 querySnapshot.docs.forEach(doc => {
-  console.log(doc.data());
+  renderUser(doc);
 });
