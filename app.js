@@ -11,7 +11,6 @@ function backgroundChange()
             counter = 0;
         headerBackground.style.backgroundImage = backgrounds[counter];
         headerBackground.style.transition = "500ms ease-in"
-        console.log(counter);
     }, 5000);
     
 }

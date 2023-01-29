@@ -2,7 +2,7 @@
 :root{
     --white: #f7f7f7;
     --lightPurple: #AA8FA4;
-    --purple: #5C2751;
+    --purple: #823772;
 }
 body{
     height: 100vh;
@@ -10,6 +10,10 @@ body{
     background-color: var(--white);
     font-family: "Poppins", sans-serif;
     margin: 0;
+    overflow-x: hidden;
+}
+button:hover{
+    cursor: pointer;
 }
 /* Header */
 header{
@@ -17,7 +21,8 @@ header{
     padding-left: 1rem;
     display: flex;
     justify-content: space-between;
-    padding-top: 2rem;
+    align-items: center;
+    padding-top: 1rem;
     padding-bottom: 1rem;
 }
 button{
@@ -27,6 +32,11 @@ button{
 .leftHeader{
     display: flex;
     gap: 2rem;
+}
+.logo{
+    width: 130px;
+    height: 52px;
+    pointer-events: none;
 }
 input{
     height: 32px;
@@ -59,19 +69,19 @@ input{
     color: var(--white);
 }
 
-/*Info Column*/
+/*Header Info*/
 .userInfo{
     height: 70%;
     background-image: url('images/aliImage.jpeg');
     background-position: 25% 65%;
-    background-size: 1450px;
+    background-size: 2000px;
     color: var(--white);
 }
-h1, h2, h3, h4{
+.nameHeader, .ratingHeader, .generalInfoHeader, .hoursHeader{
     margin: 0;
     margin-left: 100px;
 }
-.mainInfo{
+.headerInfo{
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -81,9 +91,61 @@ h1, h2, h3, h4{
 .numReviews{
     font-size: 13px;
 }
-.hours{
+.hoursHeader{
     margin-bottom: 50px;
 }
 .available{
     color: rgba(4,197,133,1);
+}
+/* Main Info */
+.mainInfo{
+    display: flex;
+    height: 100%;
+}
+.realInfo{
+    margin-top: 2rem;
+    margin-left: 10rem;
+    margin-right: 3rem;
+    height: 100%;
+    width: 60%;
+}
+/* Main Info Buttons */
+.infoButtons{
+    width: 6rem;
+    height: 3rem;
+}
+.reviewBtn, .photoBtn{
+    width: 9rem;
+}
+.reviewBtn{
+    background-color: var(--purple);
+    color: var(--white);
+    font-weight: 700;
+}
+hr{
+    margin: 16px auto;
+    color: var(--lightPurple);
+}
+/* Friends */
+.friendInfo{
+    margin-top: 2rem;
+}
+.friends{
+    color: black;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.friendImg{
+    width: 75px;
+    height: 75px;
+}
+.friendAbout{
+    color: black;
+}
+.friendName{
+    font-weight: 1000;
+}
+/* Reviews */
+.reviews{
+    color: black;
 }

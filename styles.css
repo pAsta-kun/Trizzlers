@@ -14,7 +14,7 @@ body{
 /* Header */
 #headerBackground{
     background-image: url('images/streetWithPeople.jpeg');
-    background-size: 1800px;
+    background-size: 2000px;
     height: 80%;
     
 }
@@ -23,9 +23,15 @@ header{
     padding-left: 1rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
     
+}
+.logo{
+    width: 130px;
+    height: 52px;
+    pointer-events: none;
 }
 button{
     border: none;
