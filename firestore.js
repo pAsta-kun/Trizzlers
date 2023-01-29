@@ -27,17 +27,18 @@ const userList = document.querySelector('#user-list');
 const from = document.querySelector('#add-user-form');
 
 //make element and render user
-async function renderUser(doc)
+async function renderUser(doc1)
 {
   let li = document.createElement('li');
   let name = document.createElement('span');
   let score = document.createElement('span');
   let cross = document.createElement('button');
 
-  li.setAttribute('data-id', doc.id);
+  li.setAttribute('data-id', doc1.id);
+  li.setAttribute('doc-obj', doc1);
 
-  name.textContent = doc.data().name;
-  score.textContent = doc.data().score;
+  name.textContent = doc1.data().name;
+  score.textContent = doc1.data().score;
   cross.textContent = 'x';
 
   li.appendChild(name);
@@ -46,26 +47,15 @@ async function renderUser(doc)
   
   userList.appendChild(li);
 
-  //deleting data
+  //deleting data - Not functional
   cross.addEventListener('click', (e) => {
     e.stopPropagation();
     let id = e.target.parentElement.getAttribute('data-id');
-
-    doCrap.docs.then(forEach(doc => {
-      if(doc.id == id)
-      {
-        deleteDoc(doc);
-      }
-    }))
+    deleteDoc(doc(collection(db, 'users'), id));
     
   })
 }
 
-async function doCrap()
-{
-  const querySnapshot = await getDocs(collection(db, 'users'));
-  return Promise.resolve(querySnapshot);
-}
 
 // getting data
 const querySnapshot = await getDocs(collection(db, 'users'));
