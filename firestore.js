@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -24,6 +24,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const userList = document.querySelector('#user-list');
+const from = document.querySelector('#add-user-form');
 
 //make element and render user
 function renderUser(doc)
@@ -43,7 +44,28 @@ function renderUser(doc)
     userList.appendChild(li);
 }
 
+// getting data
+
+
+
 const querySnapshot = await getDocs(collection(db, 'users'));
 querySnapshot.docs.forEach(doc => {
   renderUser(doc);
 });
+
+//saving data
+from.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const data = {
+    name: from.name.value,
+    score: from.score.value
+  };
+  const dbRef = collection(db, 'users');
+  addDoc(dbRef, data)
+  .then(docRef => {
+    console.log("u did it right bozo");
+  })
+  .catch(error => {
+    console.log(error);
+  })
+})
