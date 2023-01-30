@@ -15,10 +15,6 @@ function backgroundChange()
         headerBackground.style.transition = "500ms ease-in"
     }, 5000);
 }
-function dropDown()
-{
-    downDownThings.classList.add("show");
-}
 searchBox.addEventListener("click", function() {
     downDownThings.classList.add("show");
   });
