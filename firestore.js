@@ -47,7 +47,7 @@ async function renderUser(doc1)
   
   userList.appendChild(li);
 
-  //deleting data - Not functional
+  //Deleting Data
   cross.addEventListener('click', (e) => {
     e.stopPropagation();
     let id = e.target.parentElement.getAttribute('data-id');
